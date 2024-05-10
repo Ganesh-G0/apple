@@ -54,12 +54,23 @@ main {
     padding: .5rem 1rem;
     font-size: 1.4rem;
 }
-.nav-item > a:hover {
-    color:black;
-    border-radius: 1rem;
-    background-color: white;
-    transition: all 0.5s ease-in-out;
+@media (hover: hover) {
+    .nav-item > a:hover{
+        color:black;
+        border-radius: 1rem;
+        background-color: white;
+        transition: all 0.5s ease-in-out;
+    }
 }
+@media (hover: none) {
+    .nav-item > a:active {
+        color:black;
+        border-radius: 1rem;
+        background-color: white;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
 /* -----------------------------------------------------Main Content------------------------------------- */
 .content-container {
     gap: 4rem;
