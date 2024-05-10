@@ -1,132 +1,198 @@
-*, ::before, ::after {
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
+    font: inherit;
+    box-sizing: border-box;
 }
+img, picture, svg, video {
+    width: 100%;    
+    display: block;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+p {
+    max-width: 62ch;
+    text-wrap: pretty;
+}
+ul, li {
+    list-style: none;
+}
+a {    
+    text-decoration: none;
+}
+/* ---------------------------------------------------Main----------------------- */
 main {
-    font-size: 62.5%;
+    gap: 4rem;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
 }
+.brand-logo { max-width: 40px;}
 .navbar {
+    top: 0;    
+    left: 0;
+    right: 0;
+    gap: 1rem; 
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
     background-color: black;
+}
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .nav-item > a {
     color: white;
+    padding: .5rem 1rem;
     font-size: 1.4rem;
 }
 .nav-item > a:hover {
     color:black;
+    border-radius: 1rem;
     background-color: white;
+    transition: all 0.5s ease-in-out;
 }
-.container {
-    /* background-color: gray; */
-    font-family: 'Times New Roman', Times, serif;
-}
-img {
+/* -----------------------------------------------------Main Content------------------------------------- */
+.content-container {
+    gap: 4rem;
+    margin: 2rem;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
-#ipad-img, #mac-img {
-    width: 800px;
+.img-fluid {
+    margin-top: 6rem;
+    max-width: 720px;
 }
-.description > li {
-    list-style: none;
-    font-size: 1.1rem;
+.description {
+    gap: 1rem;
+    display: flex;
+    max-width: 720px;
     font-weight: 700;
-    max-width: 650px;
-    margin-top: .8rem;
-    margin-bottom: .8rem;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: start;
+    flex-direction: column;
+    justify-content: space-between;    
     font-family: "Roboto", "Helvetica Neue", sans-serif;
 }
-.description > li > p {
-    font-size: 2rem;
-    font-weight: 700;
-}
-.description > li > h6 {
+.description > h1 {
+    font-size: 1.4rem;
     font-weight: 700;
     color: orangered;
+} 
+.description > h2 {
+    font-weight: 900;
+    font-size: 1.8rem;
+}
+.description > h3 {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.6rem;
+}
+.description > p {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+/* --------------------------------------------Intro Video------------------------------------ */
+#intro { 
+    font-size: 2rem;
+    font-weight: 700; 
+    text-align: center;
+}
+#intro > h1 > span {
+    color: #590696;
+    font-style: italic;
 }
 iframe {
-    max-width: 1240px;
+    width: 100%;
+    max-width: 720px;
+    min-height: 320px;
 }
-#intro > h1 {
+/* --------------------------------------------Signing Up------------------------------------ */
+#sign-up {
+    text-align: center;
+    text-transform: capitalize;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+#sign-up > h1 {
     font-weight: 700;
+    font-size: 2rem;
 }
-#forum > h4 {
-    font-size: 1.8rem;
-    font-weight: 700;
+#form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
 }
-#email {
-    width: 24rem;
-    font-size: 1.2rem;
+#form > input {
+    text-align: center;
+    border: 2px solid black;
+    padding: .5rem 1rem;
     border-radius: 2rem ;
+    font-size: 1.2rem;
+    width: 90%;
+    max-width: 25rem;
+}
+#email::placeholder {
+    color: black;
+}
+#email:focus {
+    outline: black;
 }
 #submit {
-    width: 7rem;
-    font-size: large;
-    border-radius: 2rem ;
+    color: white;
+    background-color: black;
+}
+#submit:hover {
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    transition: all 0.3s ease-in;
+}
+/* ----------------------------------------------------Footer------------------------------------------*/
+footer {
+    border-top: 2px solid lightgray;
+    width: 100%;
 }
 footer > p {
-    border-top: 2px solid lightgray;
-    font-size: .8rem;
+    padding: 1rem;
+    font-size: 1rem;
 }
-
-/* xxl */
-@media (max-width: 1536px) {
-    .container { 
-        max-width: 1280px;
+@media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
     }
 }
-/* xl */
-@media (max-width: 1280px) {
-    .container { 
-        max-width: 1024px;
-    }
-}
-/* lg */
-@media (max-width: 1024px) {
-    .container { 
-        max-width: 768px;
-    }
-}
-/* md */
-@media (max-width: 768px) {
-    .container { 
-        max-width: 640px;
-    }
-}
-/* sm */
-@media (max-width: 640px) {
-    .container { 
-        max-width: 475px;
-    }
-}
-/* xs */
-@media (max-width: 475px) {
-    .container { 
+@media (min-width: 768px) {
+    main {
         width: 100%;
+        max-width: 1080px;
     }
-    .description > li {
-        font-size: .9rem;
+    iframe {
+        width: 100%;
+        height: 50dvh
     }
-    .description > li > p {
-        font-size: 1.2rem;
-    }
-    .description > li > h6 {
-        font-size: .9rem;
-    }
-    #intro > h1 {
-        font-size: 1.1rem;
-    }
-    #forum > h4 {
-        font-size: 1.1rem;
-    }
-    #email {
-        width: 12rem;
-        font-size: .9rem;
-    }
-    footer > p {
-        font-size: .6rem;
-    }
-}
+    .nav-item > a { font-size: 2rem; }
+    .description > h1,
+    .description > p { font-size: 1.6rem; } 
+    .description > h2 { font-size: 2rem; }
+    .description > h3 { font-size: 1.8rem; }
+    #intro { font-size: 2.5rem; }
+    #sign-up > h1 { font-size: 2.5rem; }
+    #form > input { font-size: 1.6rem; }
+    footer > p {  font-size: 1.6rem; }
+} 
